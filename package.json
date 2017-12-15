@@ -13,7 +13,7 @@
     "node": "8.x"
   },
   "repository": {
-    "url": "https://github.com/mikhailsinyakov/file_metadata"
+    "url": "https://github.com/mikhailsinyakov/file_metadata.git"
   },
   "license": "MIT",
   "keywords": [
