@@ -11,11 +11,8 @@ app.use(bodyParser.json());
 app.use(multer({dest: __dirname + "/uploads"}).single("file"));
 
 app.post("/get-file-size", (req, res) => {
-  
-  if (req.file) console.log(req.file);
-  console.log(req.body);
   const obj = {
-    size: ""
+    size: req.file.size
   }
   res.json(obj);
 });
