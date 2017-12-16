@@ -3,7 +3,7 @@ const app = express();
 const multer = require("multer");
 
 const port = process.env.PORT;
-const upload = multer();
+const upload = multer(/*{dest: "uploads/"}*/);
 
 app.use(express.static('public'));
 
