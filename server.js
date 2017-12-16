@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 app.post("/get-file-size", upload.array(), (req, res) => {
   
-  console.log(req.get("Content-Type"));
+  console.log(req.body);
   const obj = {
     size: ""
   }
