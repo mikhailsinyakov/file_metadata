@@ -9,18 +9,19 @@ const storage = multer.diskStorage({
     callback(null, "./uploads");
   },
   filename: (request, file, callback) => {
-    console.log(file);
     callback(null, file.originalname)
   }
 })
-const upload = multer({dest: "./uploads/"});
+//const upload = multer({storage: storage});
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(multer({storage: storage}).single("file"));
 
-app.post("/get-file-size", upload.single('file'), (req, res) => {
+app.post("/get-file-size", (req, res) => {
   
+  if (req.file) console.log(req.file);
   console.log(req.body);
   const obj = {
     size: ""
