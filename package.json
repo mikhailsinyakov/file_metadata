@@ -1,5 +1,5 @@
 {
-  "name": "File metadata microservice",
+  "name": "File_metadata_microservice",
   "version": "0.0.1",
   "description": "Receiving the file size in bytes within the JSON response",
   "main": "server.js",
