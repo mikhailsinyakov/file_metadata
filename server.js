@@ -12,11 +12,13 @@ app.use(bodyParser.json());
 app.use(multer({dest: __dirname + "/uploads"}).single("file"));
 
 app.post("/get-file-size", (req, res) => {
-  console.log(req.file.path)
   const obj = {
     size: req.file.size
   }
   res.json(obj);
+  fs.unlink(req.file.path, (err) => {
+    if (err) throw err;
+  });
 });
 
 app.listen(port, () => {
